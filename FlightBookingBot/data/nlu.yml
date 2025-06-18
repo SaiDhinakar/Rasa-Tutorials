@@ -1,0 +1,15 @@
+version: "3.1"
+
+nlu:
+- intent: book_flight
+  examples: |
+    - I want to book a flight
+    - Book me a flight to [Paris](destination)
+    - Fly to [London](destination) tomorrow
+  
+- intent: inform
+  examples: |
+    - tomorrow
+    - today
+    - next Monday
+    - I want to travel on Friday
