@@ -1,0 +1,35 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_weather
+  - thank_you
+  - mood_great
+
+entities:
+  - city
+
+slots:
+  city:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: city
+
+responses:
+  utter_greet:
+    - text: "Hey! How can I help you today?"
+  utter_happy:
+    - text: "Great, carry on!"
+  utter_weather:
+    - text: "The weather looks sunny today! Want specifics for a city?"
+  utter_thanks:
+    - text: "You're welcome!"
+
+actions:
+  - action_check_weather
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
